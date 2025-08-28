@@ -1,0 +1,9 @@
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie,
+    label: "🎭 Escolha o filme",
+    prompt: "Selecione um filme da nossa coleção...",
+    input_html: { class: "form-select form-select-lg" } %>
+    <%= f.submit "Save", class: "btn btn-success" %>
+<% end %>
+
+<%= link_to "Back", root_path, class: "btn btn-secondary mt-2" %>
