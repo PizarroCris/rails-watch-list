@@ -1,5 +1,19 @@
-<h1>All Lists</h1>
-<ul>  <% @lists.each do |list| %>
-  <li><%= link_to list.name, list_path(list) %></li>
-<% end %></ul>
-<%= link_to "New List", new_list_path  %>
+<div id="banner_index">
+  <h1 class="fw-bolder">Your movies lists!</h1>
+  <p> Made by Cristiano Pizarro ©</p>
+</div>
+
+<div class="container text-below-banner py-4">
+  <div class="row">
+    <h2 class="mt-3">My Lists</h2>
+      <% @lists.each do |list| %>
+        <div class="col-4">
+          <div class="card mt-3 bg-light shadow">
+            <div class="card-body">
+              <%= link_to list.name, list_path(list), class: "text-align-center text-decoration-none" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

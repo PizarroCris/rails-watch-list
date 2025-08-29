@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-black">
+  <div class="container container-fluid">
+      <%= link_to "<i class='fa-solid fa-film nav-link'></i>".html_safe, root_path %>
+    <form class="d-flex gap-3">
+      <%= link_to "New List", new_list_path, class: "nav-link btn btn-link btn-sm text-decoration-none" %>
+      <%= link_to "My Lists", root_path, class: 'btn btn-link btn-sm text-decoration-none nav-link' %>
+    </form>
+  </div>
+</nav>
