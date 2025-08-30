@@ -1,14 +1,24 @@
-<div class="row justify-content-center">
-  <div class="col-4">
-    <h1 class="mb-3">Create List:</h1>
-    <%= simple_form_for @list do |f| %>
-      <%= f.input :name %>
-      <div class="d-grid">
-        <%= f.submit "Create form", class: 'btn btn-success' %>
-      </div>
-    <% end %>
-    <%= link_to "Back", root_path %>
-  </div>
+<div id="banner_index">
+  <h1 class="fw-bolder">Create your list:</h1>
 </div>
 
+<div class="bg-new">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-8 bg-white mt-5 py-5">
+      <%= simple_form_for @list do |f| %>
+        <%= f.input :name %>
 
+        <div class="mb-3 d-flex align-items-center gap-1">
+          <label for="upload-image" class="btn btn-light border">Choose File</label>
+          <%= f.input :image, as: :file, input_html: { id: "upload-image", hidden: true }, label: false %>
+          <span id="file-name" class="ms-2 border text-muted py-1 px-3">No file selected</span>
+        </div>
+
+        <div class="d-flex gap-2">
+          <%= f.submit "Create form", class: 'btn btn-primary w-50' %>
+          <%= link_to "Back", root_path, class: 'btn btn-secondary w-50' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

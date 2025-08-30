@@ -4,16 +4,17 @@
 </div>
 
 <div class="container text-below-banner py-4">
+  <h2 class="mt-3">My Lists</h2>
   <div class="row">
-    <h2 class="mt-3">My Lists</h2>
-      <% @lists.each do |list| %>
-        <div class="col-4">
-          <div class="card mt-3 bg-light shadow">
-            <div class="card-body">
-              <%= link_to list.name, list_path(list), class: "text-align-center text-decoration-none" %>
-            </div>
+    <% @lists.each do |list| %>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card mt-3 bg-light shadow-sm h-100 d-flex align-items-center">
+          <div class="card-body text-center">
+            <%= link_to list.name, list_path(list), class: "stretched-link fw-bold text-dark text-decoration-none" %>
           </div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
+
