@@ -9,6 +9,8 @@ class List < ApplicationRecord
   private
 
   def image_presence
-    errors.add(:image, "must be attached") unless image.attached?
+    unless image.attached?
+      errors.add(:image, "must be attached")
+    end
   end
 end
