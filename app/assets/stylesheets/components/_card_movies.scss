@@ -1,0 +1,17 @@
+
+.img-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.img-card img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}

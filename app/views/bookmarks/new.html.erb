@@ -1,10 +1,22 @@
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie,
-    label: "🎭 Escolha o filme",
-    prompt: "Selecione um filme da nossa coleção...",
-    input_html: { class: "form-select form-select-lg" } %>
-    <%= f.input :comment %>
-    <%= f.submit "Save", class: "btn btn-success" %>
-<% end %>
+<div id="banner_index">
+  <h1 class="fw-bolder">Add a movie to your <%= @list.name %> list</h1>
+</div>
 
-<%= link_to "Back", root_path, class: "btn btn-secondary mt-2" %>
+<div class="bg-new">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-8 bg-white mt-5 py-5 rounded-4">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.association :movie,
+          label: "🎭 Escolha o filme",
+          prompt: "Selecione um filme da nossa coleção...",
+          input_html: { class: "form-select form-select-lg" } %>
+          <%= f.input :comment %>
+          <%= f.submit "Save", class: "btn btn-success" %>
+          <%= link_to "Back", root_path, class: "btn btn-secondary mt-2" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

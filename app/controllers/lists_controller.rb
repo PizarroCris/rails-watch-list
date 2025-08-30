@@ -14,7 +14,9 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
+    @list = List.new(list_params.except(:image))
+    @list.image.attach(params[:list][:image]) if params[:list][:image]
+
     if @list.save
       redirect_to @list
     else
@@ -29,6 +31,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name, :image)
+    params.require(:list).permit(:name)
   end
 end

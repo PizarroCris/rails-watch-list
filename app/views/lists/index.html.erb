@@ -3,18 +3,27 @@
   <p> Made by Cristiano Pizarro ©</p>
 </div>
 
-<div class="container text-below-banner py-4">
-  <h2 class="mt-3">My Lists</h2>
-  <div class="row">
-    <% @lists.each do |list| %>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card mt-3 bg-light shadow-sm h-100 d-flex align-items-center">
-          <div class="card-body text-center">
-            <%= link_to list.name, list_path(list), class: "stretched-link fw-bold text-dark text-decoration-none" %>
+<div class="bg-new text-white">
+  <div class="container text-below-banner py-4">
+    <h2 class="mb-3 text-center">My Lists</h2>
+    <div class="row">
+      <% @lists.each do |list| %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card bg-light h-100">
+            <% if list.image.attached? %>
+              <%= cl_image_tag list.image.key, class: "card-img", style: "height: 200px; object-fit: cover;" %>
+              <div class="card-img-overlay d-flex align-items-center justify-content-center p-0">
+                <%= link_to list.name, list_path(list), class: "text-white fw-bold text-decoration-none bg-dark bg-opacity-50 w-100 text-center py-2" %>
+              </div>
+            <% else %>
+              <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" style="height: 200px;">
+                <span class="text-white fw-bold"><%= list.name %></span>
+              </div>
+            <% end %>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
